@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" />
+<title>Породы собак</title>
+</head>
+<style>
+    ul {
+        height: 30vh;
+        overflow-y: scroll;
+    }
+body {
+    font-family: Gabriola;
+    font-weight: 30px;
+    font-size: 30px;
+    color:black;
+}
+p{
+    font-family: Gabriola;
+    font-weight: 30px;
+    font-size: 30px;
+    color:black;
+}
+
+
+</style>
+<body>
+<table
+style="width:100%;">
+<tr><td>
+<table
+border="1"
+background="bg.jpg"
+cellpadding="70"
+style="width:100%;">
+<tr><td></td></tr>
+</table>
+<table bgcolor="#d2ecf2"
+       cellpadding="10"
+       style="width:100%; background-size:cover;">
+    <tr>
+        <td rowspan="2"
+            style="width:80%">
+            <h1 align="center">Немного общей информации о собаках</h1>
+            <h2>Благоприятное эмоциональное влияние на людей</h2>
+            <p style="text-indent:20px">
+                Собака - это домашнее животное. У собаки острые зубы, поэтому она может очень легко есть мясо, у нее четыре ноги, два уха, два глаза, хвост, рот и нос. Это очень умное животное и очень полезно для ловли воров. Она бежит очень быстро, громко лает и нападает на незнакомцев. Собака спасает жизнь хозяина от опасности.
+
+            </p>
+            <h2>Уход за питомцем</h2>
+            <p style="text-indent:20px">
+                <h4> Питание </h4>
+               Собака практически всеядное животное. Но все таки она относиться к плотоядным животным. Однако ошибается тот, кто считает, что рацион собаки ничем не отличается от пищи с нашего стола. У собаки отсутствует утонченный человеческий вкус и ей отнюдь не требуются всевозможные пряности и специи, более того, таким образом можно извратить собаке вкус. Кормление является важнейшим фактором функциональной и морфологической изменчивости. Характер кормления, прежде всего, влияет на пищеварительную систему, связанную с переработкой и усвоением корма, на здоровье и организм в целом. Кормление определяет скорость роста и развития собак. Огромную роль сбалансированное (в соответствии с физиологическими нормами) кормление собак играет в племенном деле - в поддержании и совершенствовании существующих и в создании новых пород и типов собак.
+
+                <h4> Роль собак в жизни людей </h4>
+                Список того, чем могут помогать псы, довольно обширен. Начать можно с того, что собаки могут помогать людям с ограниченными возможностями, например, слепым. Некоторые собаки даже выручают врачей, улавливая своим носом заболевания. Данные животные не одну сотню раз спасали жизни людям. Псы были участниками многих войн, в том числе и Великой Отечественной войны. Они могли быть разведчиками, радистами и еще много кем. Собаки могут охранять различные объекты или искать что – либо на определенной местности.
+
+                <h4> Прогулки </h4>
+                Для взрослой собаки прогулки имеют основополагающее значение. Собака, которая сидит взаперти, зачастую лишается аппетита, теряет в весе или жиреет, становится слабой и вялой. Если пес длительное время находится в тепле, у него ослабевает волосяной покров, в результате чего начинают выпадать волосы. У собаки затягиваются периоды линьки, она становится бедна псовиной.
+            </p>
+            
+		<h2 >Чат:</h2>
+                            <textarea></textarea>
+                            <br>
+                            <button onclick="send()" style="background:#eee; 
+				color:#088; 
+				text-decoration:none; 
+				display:inline-block;
+				font-family: brush script mt, sans-serif; 
+				width:200px; 
+				text-align:center; 
+				margin-left:10px; 
+				margin-top:auto; 
+				margin-bottom:auto; 
+				padding:10px 10px; 
+				transition:all 0.3s;">Send a message</button> 
+				<a href="index.php" style="text-decoration:none;">
+  				<p style="margin-left:30px;">Exit</p>
+				</a>
+				
+                            <script src="https://code.jquery.com/jquery-3.7.1.js"
+                                    integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+                                    crossorigin="anonymous"></script>
+                            <script>
+                                setInterval(function () {
+                                    getmessage();
+                                }, 1000)
+
+                                $(document).keypress(function (event) {
+                                    if (event.keyCode == 13) {
+                                        send();
+                                    }
+                                })
+
+                                function send() {
+                                    let text = document.querySelector('textarea').value;
+                                    $.ajax({
+                                        type: "POST",
+                                        url: 'chat.php',
+                                        data: {
+                                            'text': text
+                                        }
+                                    }).done(function (result) {
+                                        $('textarea')[0].value = "";
+                                    });
+
+                                }
+
+                                function getmessage() {
+                                    $.ajax({
+                                        type: "POST",
+                                        url: 'chat.php',
+                                        data: {
+                                            'get': " "
+                                        }
+                                    }).done(function (result) {
+                                        $('ul').html(result);
+                                    })
+                                }
+                            </script>
+            <ul>
+            </ul>
+           
+            
+	
+        </td>
+<td bgcolor="#b3d5e9" align="center" >
+<h3>Узнать больше о породах</h3>
+<p>
+<a href="1.html">
+<img src="pud1.jpg" width="250">
+<p>Pudel</p></a></p>
+<p>
+    <a href="2.html">
+        <img src="d1.jpg" width="250">
+        <p>Dolmation</p>
+    </a>
+</p>
+<p>
+<a href="3.html">
+<img src="dob1.jpg" width="250">
+<p>Doberman</p></a></p>
+</td>
+</tr>
+<tr>
+<td
+bgcolor="#cce8f4"
+align="center">
+<a href="4.html">
+<h3>Использовать API</h3></a>
+</td>
+</tr>
+</table>
+<table
+border="1"
+background="bg.jpg"
+height="120"
+style="width:100%; border-radius:5px;">
+<tr><th>
+</th></tr>
+</table>
+</td>
+</tr>
+</table>
+</body>
+</html>

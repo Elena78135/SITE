@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>			
+body {
+    font-family: brush script mt;
+    font-weight: 400;
+    font-size: 50px;
+    color: #000000
+}
+a {
+    font-family: brush script mt;
+    font-weight: 400;
+    font-size: 50px;
+    color: #000000
+}
+p {
+    font-family: brush script mt;
+    font-weight: 400;
+    font-size: 50px;
+    color: #000000
+}
+
+</style>
+<meta charset="utf-8">
+
+    <title>API 2GIS</title>
+        <script src="https://maps.api.2gis.ru/2.0/loader.js?pkg=full"></script>
+        <script type="text/javascript">
+            var map;
+
+            DG.then(function () {
+                map = DG.map('map', {
+                    center: [54.98, 82.89],
+                    zoom: 13
+                });
+
+                DG.marker([54.98, 82.89]).addTo(map).bindPopup('Вы кликнули по мне!');
+            });
+        </script>
+</head>
+<body>
+<table
+background="bg.jpg"
+cellpadding="70"
+style="width:100%;">
+<tr><td></td></tr>
+</table>
+<table
+cellpadding="10"
+style="width:100%;">
+<tr><td
+rowspan="2"
+style="width:80%">
+<h1 align="center">Who's a good boy:</h1>
+<h2 align="center">On this resource, you can open Google Maps and find out how to get to the right place, taking into account the presence of your pet.</h2>
+
+</td>
+<p align="center">
+<a href="site.html">
+</p><p align="left">Go back to the main page</p></tr></table>
+<table>
+
+<tr >
+<p align="center">An API transfer has occurred</p>
+<div id="map" style="width:500px; height:400px"></div>
+</tr>
+</table>
+</body>
+</html>
